@@ -6,6 +6,8 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    ui->lineEdit->setValidator(new QIntValidator(ui->lineEdit));//只允许输入整形
+
 }
 
 Widget::~Widget()
@@ -227,5 +229,11 @@ void Widget::on_tobutton_clicked()
     edittext=QString::number(num);
     ui->lineEdit->setText(edittext);
     //edittext.clear();
+}
+
+void Widget::on_lineEdit_textChanged(const QString &arg1)//当文本改变会执行此函数，argl是新文本
+{
+    QString newtext = arg1;
+    edittext=newtext;
 }
 

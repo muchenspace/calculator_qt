@@ -7,7 +7,7 @@
 #include <iostream>
 #include <stack>
 #include <string>
-
+#include <QIntValidator>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Widget;
@@ -61,6 +61,8 @@ private slots:
 
 
     void on_tobutton_clicked();
+
+    void on_lineEdit_textChanged(const QString &arg1);
 
 private:
     Ui::Widget *ui;
